@@ -1,0 +1,64 @@
+<!-- {% extends 'layout.html' %} -->
+
+{% if not current_user.is_authenticated %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='kanban.css') }}">
+        <title>Kanban Board 1</title>
+    </head>
+    <body>
+        <div style="text-align: center;">
+            <h1>Welcome!</h1>
+            <!-- <p>To use a kanban board, please <a href="{{ url_for('register') }}"> sign up</a> or <a href="{{ url_for('login') }}"> login</a>.</p> -->
+            <p>To use a kanban board, please:</p>
+            <a href="{{ url_for('register') }}"><button>Sign Up</button></a> or <a href="{{ url_for('login') }}"><button>Log In</button></a>
+        </div>
+    </body>
+    </html>
+{% else %}
+    <!DOCTYPE html>
+    <html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='kanban.css') }}">
+
+    </head>
+    <body>
+
+        <div class="whole">
+        <div class="column"> 
+            <p class="state">TO DO</p>
+            <div class="task">Take class</div>
+            <div class="task">Go outside</div>
+            <div class="task">Another task</div>
+            <form class="task">
+            <input type="text" placeholder="Add a task..."/>
+            </form>
+        </div>
+        <div class="column">  
+            <p class="state">IN PROGRESS</p>
+            <div class="task">Do some work</div>
+            <div class="task">Listen to something</div>
+            <div class="task">Another task</div>
+            <form class="task">
+            <input type="text" placeholder="Add a task..."/>
+            </form>
+        </div>
+        <div class="column">
+            <p class="state">DONE</p>
+            <div class="task">Pray</div>
+            <div class="task">Have breakfast</div>
+            <div class="task">Another task</div>
+            <form class="task">
+            <input type="text" placeholder="Add a task..."/>
+            </form>
+        </div>
+        </div>
+
+    </body>
+    </html>
+{% endif %}

@@ -1,0 +1,13 @@
+{% extends "layout.html"%}
+{% block content %}
+    {% if current_user.is_authenticated %}
+        <h1>Hello, <em>{{ current_user.username }}</em></h1>
+    {% else %}
+        <h1>Hello</h1>
+    {% endif %}
+    <p>The Kanban Board is a project management tool that originated in Japan. It was originally used in manufacturing to visualize the flow of work and improve efficiency, but it has since been adapted for use in many different industries.</p>
+    <p>Our Kanban Board is a digital implementation of this concept, allowing teams to manage their work and collaborate more effectively.</p>
+    <h2>Origins</h2>
+    <p>The Kanban Board was first developed by Taiichi Ohno, an industrial engineer at Toyota, in the 1940s. Ohno was looking for a way to improve efficiency in Toyota's manufacturing processes, and he came up with the idea of using cards (or "kanban" in Japanese) to signal the need for more parts or materials.</p>
+    <p>The idea of using cards to represent work items quickly caught on, and Kanban Boards became a common sight in Japanese factories. Over time, the concept spread to other industries and eventually to the rest of the world.</p>
+{% endblock content %}

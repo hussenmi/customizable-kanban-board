@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% block content %}
+  {% if not current_user.is_authenticated %}
+  <div style="text-align: center;">
+    <h1>Welcome!</h1>
+    <!-- <p>To use a kanban board, please <a href="{{ url_for('register') }}"> sign up</a> or <a href="{{ url_for('login') }}"> login</a>.</p> -->
+    <p>To use a kanban board, please:</p>
+    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('register') }}">Sign Up</a> or <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('login') }}">Login</a>
+  </div>
+  {% else %}
+  <div class="whole">
+    <div class="column"> 
+      <p class="state">TO DO</p>
+      {% for task in tasks_todo %}
+      <a href="{{ url_for('task', task_id=task.id) }}"><div class="task">{{ task.title }}</div></a>
+      {% endfor %}
+      <a class="btn btn-primary btn-sm mt-1 mb-1" href="{{ url_for('create_task') }}">Add a task</a>
+      <!-- <form class="task">
+        <input type="text" placeholder="Add a task..."/>
+      </form> -->
+    </div>
+    <div class="column">  
+      <p class="state">IN PROGRESS</p>
+      {% for task in tasks_in_progress %}
+      <a href="{{ url_for('task', task_id=task.id) }}"><div class="task">{{ task.title }}</div></a>
+      {% endfor %}
+      <a class="btn btn-primary btn-sm mt-1 mb-1" href="{{ url_for('create_task') }}">Add a task</a>
+      <!-- <form class="task">
+        <input type="text" placeholder="Add a task..."/>
+      </form> -->
+    </div>
+    <div class="column">
+      <p class="state">DONE</p>
+      {% for task in tasks_done %}
+      <a href="{{ url_for('task', task_id=task.id) }}"><div class="task">{{ task.title }}</div></a>
+      {% endfor %}
+      <a class="btn btn-primary btn-sm mt-1 mb-1" href="{{ url_for('create_task') }}">Add a task</a>
+      <!-- <form class="task">
+        <input type="text" placeholder="Add a task..."/>
+      </form> -->
+    </div>
+  </div>
+  {% endif %}
+{% endblock content %}
