@@ -1,2 +1,2 @@
-# customizable-kanban-board
+# Customizable Kanban Board
 In this repository, I create a Kanban board that allows users to create and manage tasks as well as collaborate with others in teams.
