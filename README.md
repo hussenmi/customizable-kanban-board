@@ -11,3 +11,5 @@ db.create_all()
 ```
 
 The demonstration for the application can be found [here](https://www.loom.com/share/bd32354138f844bdbb07046a0903675c).
+
+Note: In the recording, the drop down for task status doesn't show for some reason. The same goes for selecting due dates. I just wanted to mention it so there is no confusion. Everything should work fine when the app is run though.
