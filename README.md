@@ -10,4 +10,4 @@ app.app_context().push()
 db.create_all()
 ```
 
-
+The demonstration for the application can be found [here](https://www.loom.com/share/bd32354138f844bdbb07046a0903675c).
