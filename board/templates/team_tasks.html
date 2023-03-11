@@ -1,12 +1,9 @@
 {% extends 'layout.html' %}
 {% block content %}
-  {% if not current_user.is_authenticated %}
-  <div style="text-align: center;">
-    <h1>Welcome!</h1>
-    <p>To use a kanban board, please:</p>
-    <a class="btn btn-primary" href="{{ url_for('register') }}">Sign Up</a> or <a class="btn btn-primary" href="{{ url_for('login') }}">Login</a>
+  <div style="font-size:25px; font-weight:bold; font-style:italic; text-align:center;">
+    {{ team.name }} tasks
   </div>
-  {% else %}
+  <br>
   <div class="whole">
     <div class="column"> 
       <p class="state">TO DO</p>
@@ -28,7 +25,6 @@
     </div>
   </div>
   <div class="btn">
-  <a class="btn btn-primary" href="{{ url_for('create_task') }}">Add a task</a>
+    <a class="btn btn-primary" href="{{ url_for('create_team_task', team_id=team.id) }}">Add a task</a>
   </div>
-  {% endif %}
 {% endblock content %}

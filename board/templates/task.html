@@ -5,9 +5,11 @@
         <p><h3>Date created: {{ task.date_created.strftime('%Y-%m-%d') }}</h3></p>
         <p><h3>Status: {{ task.status }}</h3></p>
         <p><h3>Description: {{ task.description }}</h3></p>
+        <p><h3>Due Date: {{ task.due_date.strftime('%Y-%m-%d') }}</h3></p>
+        <p><h3>Priority: {{ task.priority }}</h3></p>
 
-        <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('update_task', task_id=task.id) }}">Update</a>
-        <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+        <a class="btn btn-secondary" href="{{ url_for('update_task', task_id=task.id) }}">Update</a>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">

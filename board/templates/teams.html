@@ -1,0 +1,8 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h1>Team Listing</h1>
+    {% for team in teams %}
+        <a href="{{ url_for('team', team_id=team.id) }}"><div class="task" id="team">{{ team.name }}</div></a>
+    {% endfor %}
+    <a class="btn btn-primary btn-lg" href="{{ url_for('create_team') }}">Create a Team</a>
+{% endblock content %}

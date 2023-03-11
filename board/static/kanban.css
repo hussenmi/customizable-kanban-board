@@ -22,9 +22,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* line-height: 70px; */
-  /* word-wrap: break-word; */
-  /* overflow-wrap: break-word; */
+}
+
+#team {
+  background-color: #333;
+  border-radius: 7px;
+  font-size: 30px;
 }
 
 .state {
