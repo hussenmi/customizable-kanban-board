@@ -1,7 +1,7 @@
 # Customizable Kanban Board
 In this repository, I create a Kanban board that allows users to create and manage tasks as well as collaborate with others in teams.
 
-To run the code, from the same directory as the `app.py` file, run the following commands in the python shell. This will just initialize the database.
+To run the code, from the same directory as the `app.py` file, run the following commands in a python shell. This will initialize the database.
 
 ``` python
 from board import app, db
